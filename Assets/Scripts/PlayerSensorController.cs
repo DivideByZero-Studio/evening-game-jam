@@ -34,7 +34,7 @@ public class PlayerSensorController : MonoBehaviour
     {
         if (Input.GetKeyUp(KeyCode.Mouse1))
         {
-            Audible = false;
+            Audible = false; 
             _animator.SetBool("EarsClosed", false);
             
         }

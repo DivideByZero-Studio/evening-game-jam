@@ -8,7 +8,7 @@ public class PushableHands : MonoBehaviour
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Pushable"))
         {
-            _animator.SetTrigger("PushStart");
+            _animator.SetBool("Pushing", true);
         }
     }
 
@@ -16,7 +16,7 @@ public class PushableHands : MonoBehaviour
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Pushable"))
         {
-            _animator.SetTrigger("PushEnd");
+            _animator.SetBool("Pushing", false);
         }
     }
 }
