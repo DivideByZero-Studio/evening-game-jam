@@ -18,7 +18,7 @@ public class PlayerSensorController : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.Mouse0))
         {
             Visible = false;
-            _animator.SetTrigger("OpenEyes");
+            _animator.SetBool("EyesClosed", false);
             UIController.Instance.OpenEyes();
         }
         
@@ -26,7 +26,7 @@ public class PlayerSensorController : MonoBehaviour
             return;
 
         Visible = true;
-        _animator.SetTrigger("CloseEyes");
+        _animator.SetBool("EyesClosed", true);
         UIController.Instance.CloseEyes();
     }
 
@@ -35,7 +35,7 @@ public class PlayerSensorController : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.Mouse1))
         {
             Audible = false;
-            _animator.SetTrigger("OpenEars");
+            _animator.SetBool("EarsClosed", false);
             
         }
         
@@ -43,7 +43,7 @@ public class PlayerSensorController : MonoBehaviour
             return;
 
         Audible = true;
-        _animator.SetTrigger("CloseEars");
+        _animator.SetBool("EarsClosed", true);
 
         
     }
