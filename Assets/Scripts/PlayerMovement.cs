@@ -20,8 +20,6 @@ public class PlayerMovement : MonoBehaviour
             MoveAxisRight = -Input.GetAxisRaw("Vertical"),
             MoveAxisForward = Input.GetAxisRaw("Horizontal"),
             JumpDown = Input.GetKeyDown(KeyCode.Space),
-            CrouchDown = Input.GetKeyDown(KeyCode.LeftControl),
-            CrouchUp = Input.GetKeyUp(KeyCode.LeftControl)
         };
 
         characterController.SetInputs(ref characterInputs);
