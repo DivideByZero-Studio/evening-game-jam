@@ -233,7 +233,7 @@ MonoBehaviour:
   StableMovementSharpness: 10
   OrientationSharpness: 20
   OrientationMethod: 1
-  MaxAirMoveSpeed: 2
+  MaxAirMoveSpeed: 2.5
   AirAccelerationSpeed: 2
   Drag: 1
   AllowJumpingWhenSliding: 0
