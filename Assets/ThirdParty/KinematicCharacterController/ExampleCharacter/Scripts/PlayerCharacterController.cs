@@ -37,6 +37,7 @@ namespace KinematicCharacterController.Examples
         TowardsGroundSlopeAndGravity,
     }
 
+    [SelectionBase]
     public class PlayerCharacterController : MonoBehaviour, ICharacterController
     {
         public KinematicCharacterMotor Motor;
