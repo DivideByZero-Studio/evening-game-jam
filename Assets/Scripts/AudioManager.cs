@@ -23,6 +23,8 @@ public class AudioManager : MonoBehaviour
 
     private AudioSource _currentAmbientSource;
 
+    private float _volumeBeforeMuting;
+    
     private void Awake()
     {
         if (Instance == null)
@@ -34,6 +36,17 @@ public class AudioManager : MonoBehaviour
         DontDestroyOnLoad(this);
     }
 
+    public void Mute()
+    {
+        audioMixer.GetFloat(MasterVolume, out _volumeBeforeMuting);
+        SetMasterVolume(0f);
+    }
+    
+    public void Unmute()
+    {
+        SetMasterVolume(_volumeBeforeMuting);
+    }
+    
     public void SetNormalSnapshot(float transitionTime)
     {
         normalSnapshot.TransitionTo(transitionTime);
