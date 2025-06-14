@@ -24,13 +24,13 @@ public class EyeEnemyAttack : MonoBehaviour
     {
         IsAttacking = true;
         
-        _meshTransform.LookAt(new Vector3(0, 0, playerHealth.transform.position.z));
+        _meshTransform.LookAt(new Vector3(playerHealth.transform.position.x, 0, playerHealth.transform.position.z));
         _animator.SetTrigger("Hit");
 
         float timer = 0;
         while (timer < 0.5f)
         {
-            _meshTransform.LookAt(new Vector3(0, 0, playerHealth.transform.position.z));
+            _meshTransform.LookAt(new Vector3(playerHealth.transform.position.x, 0, playerHealth.transform.position.z));
             timer += Time.deltaTime;
             yield return null;
         }
