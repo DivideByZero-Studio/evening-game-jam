@@ -23,10 +23,18 @@ public class SoundEnemyAttack : MonoBehaviour
     
     private void OnTriggerStay(Collider other)
     {
-        if (other.TryGetComponent<PlayerSensorController>(out var playerSensorController))
+        if (other.TryGetComponent(out PlayerSensorController playerSensorController))
         {
+            var direction = playerSensorController.transform.position - _meshTransform.position;
+            direction.x = 0.1f;
+            var lookRotation = Quaternion.LookRotation(direction) * Quaternion.Euler(-90, 0, 0);
+            var newRotation = lookRotation.eulerAngles;
+            newRotation.y = 0;
+            newRotation.x *= Mathf.Sign(Mathf.Abs(_meshTransform.position.z) - Mathf.Abs(playerSensorController.transform.position.z));
+            _meshTransform.localRotation = Quaternion.Euler(newRotation);
+            
             var playerHealth = other.GetComponent<PlayerHealth>();
-            if (playerSensorController.Audible == false && playerHealth.IsAlive)
+            if (!playerSensorController.Audible && playerHealth.IsAlive)
             {
                 if (_timer >= _attackCooldown)
                 {
@@ -39,23 +47,10 @@ public class SoundEnemyAttack : MonoBehaviour
     
     private IEnumerator AttackRoutine(PlayerHealth playerHealth)
     {
-        var direction = playerHealth.transform.position - _meshTransform.position;
-        direction.y = 0;
-        direction.z = 0;
-        _meshTransform.localRotation = Quaternion.LookRotation(direction, Vector3.up);
         _animator.SetTrigger("Hit");
         _projectile.SetActive(true);
-        
-        float timer = 0;
-        while (timer < _timeToAttack)
-        {
-            direction = playerHealth.transform.position - _meshTransform.position;
-            direction.y = 0;
-            direction.z = 0;
-            _meshTransform.localRotation = Quaternion.LookRotation(direction, Vector3.up);
-            timer += Time.deltaTime;
-            yield return null;
-        }
+
+        yield return new WaitForSeconds(_timeToAttack);
         
         playerHealth.TakeDamage(1);
         yield return new WaitForSeconds(0.2f);
