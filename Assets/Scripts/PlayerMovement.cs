@@ -4,13 +4,26 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private PlayerCharacterController characterController;
+    [SerializeField] private PlayerHealth _playerHealth;
     
     private Vector2 inputDirection;
     private PlayerInput playerInput;
 
     private void Update()
     {
-        HandleCharacterInput();
+        if (!_playerHealth.IsAlive)
+        {
+            var characterInputs = new PlayerCharacterInputs
+            {
+                MoveAxisRight = 0f,
+                MoveAxisForward = 0f,
+                JumpDown = false,
+            };
+
+            characterController.SetInputs(ref characterInputs);
+        }
+        else
+            HandleCharacterInput();
     }
     
     private void HandleCharacterInput()

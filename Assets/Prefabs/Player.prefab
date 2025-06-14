@@ -149,7 +149,6 @@ Transform:
   m_Children:
   - {fileID: 6229310962358711134}
   - {fileID: 469597020987740074}
-  - {fileID: 121473183599276120}
   m_Father: {fileID: 91088513550993898}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6363214815827036364
@@ -168,6 +167,7 @@ GameObject:
   - component: {fileID: 6174438276642953302}
   - component: {fileID: 4792253956558501930}
   - component: {fileID: 8448965398400280381}
+  - component: {fileID: 455353385536968442}
   m_Layer: 9
   m_Name: Player
   m_TagString: Untagged
@@ -191,6 +191,7 @@ Transform:
   - {fileID: 7912784145985408198}
   - {fileID: 2104459501724458327}
   - {fileID: 1171162591334436247}
+  - {fileID: 121473183599276120}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!136 &1171384021387764899
@@ -333,6 +334,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterController: {fileID: 3988186915578044870}
+  _playerHealth: {fileID: 455353385536968442}
 --- !u!114 &4792253956558501930
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -357,6 +359,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 01204b8e7ca6ea743b43387b1270826c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animator: {fileID: 41334509297969444}
+  _pushableHands: {fileID: 8538445574239007244}
+--- !u!114 &455353385536968442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6363214815827036364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1596a63fed74011867b98952e5acc97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _animator: {fileID: 41334509297969444}
@@ -385,11 +401,11 @@ Transform:
   m_GameObject: {fileID: 6435379464040039871}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.43, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 1.411, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 7912784145985408198}
+  m_Father: {fileID: 91088513550993898}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7890828277976377372
 GameObject:
@@ -488,7 +504,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1171162591334436247}
   - component: {fileID: 163267215949644626}
-  - component: {fileID: 4890359143652820680}
+  - component: {fileID: 508238701786770586}
   m_Layer: 9
   m_Name: Point Light
   m_TagString: Untagged
@@ -576,7 +592,7 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
---- !u!114 &4890359143652820680
+--- !u!114 &508238701786770586
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

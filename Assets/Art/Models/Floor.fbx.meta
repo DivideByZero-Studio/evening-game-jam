@@ -9,6 +9,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: Floor
     second: {fileID: 2100000, guid: 3e6d15e3ed2982e4d84d2155b1b5cbec, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Floor_Kicthen
+    second: {fileID: 2100000, guid: 2f49a7f42d6ef5a4181c68e2189aa28e, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
