@@ -6,15 +6,28 @@ public class PlayerSensorController : MonoBehaviour
     public bool Audible { get; private set; }
 
     [SerializeField] private Animator _animator;
+    [SerializeField] private PushableHands _pushableHands;
     
     private void Update()
     {
+        if (_pushableHands.IsPushing && (Visible || Audible))
+        {
+            Visible = false;
+            _animator.SetBool("EyesClosed", false);
+            UIController.Instance.OpenEyes();
+            
+            Audible = false; 
+            _animator.SetBool("EarsClosed", false);
+        }
         ProcessEyes();
         ProcessEars();
     }
 
     private void ProcessEyes()
     {
+        if (Audible)
+            return;
+        
         if (Input.GetKeyUp(KeyCode.Mouse0))
         {
             Visible = false;
@@ -32,6 +45,9 @@ public class PlayerSensorController : MonoBehaviour
 
     private void ProcessEars()
     {
+        if (Visible)
+            return;
+        
         if (Input.GetKeyUp(KeyCode.Mouse1))
         {
             Audible = false; 

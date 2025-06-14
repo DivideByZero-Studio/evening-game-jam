@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class PushableHands : MonoBehaviour
 {
+    public bool IsPushing { get; private set; }
+    
     [SerializeField] private Animator _animator;
     
     private void OnTriggerEnter(Collider other)
@@ -9,6 +11,7 @@ public class PushableHands : MonoBehaviour
         if (other.gameObject.layer == LayerMask.NameToLayer("Pushable"))
         {
             _animator.SetBool("Pushing", true);
+            IsPushing = true;
         }
     }
 
@@ -17,6 +20,7 @@ public class PushableHands : MonoBehaviour
         if (other.gameObject.layer == LayerMask.NameToLayer("Pushable"))
         {
             _animator.SetBool("Pushing", false);
+            IsPushing = false;
         }
     }
 }
