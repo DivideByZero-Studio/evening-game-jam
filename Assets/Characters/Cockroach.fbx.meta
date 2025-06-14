@@ -1,14 +1,9 @@
 fileFormatVersion: 2
-guid: 3d719bcff572c024c987484d4cb527ad
+guid: d32c1fdd2dacb664c9908a477a14eb0f
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Palette_Jam_BC
-    second: {fileID: 2100000, guid: 738637862f1fed544b16b7c7ae2fed9f, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
