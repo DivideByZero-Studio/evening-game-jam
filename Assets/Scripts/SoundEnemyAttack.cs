@@ -30,7 +30,7 @@ public class SoundEnemyAttack : MonoBehaviour
             var lookRotation = Quaternion.LookRotation(direction) * Quaternion.Euler(-90, 0, 0);
             var newRotation = lookRotation.eulerAngles;
             newRotation.y = 0;
-            newRotation.x *= Mathf.Sign(Mathf.Abs(_meshTransform.position.z) - Mathf.Abs(playerSensorController.transform.position.z));
+            newRotation.x *= -Mathf.Sign(Mathf.Abs(_meshTransform.position.z) - Mathf.Abs(playerSensorController.transform.position.z));
             _meshTransform.localRotation = Quaternion.Euler(newRotation);
             
             var playerHealth = other.GetComponent<PlayerHealth>();
