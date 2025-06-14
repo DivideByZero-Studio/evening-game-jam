@@ -57,4 +57,10 @@ public class UIController : MonoBehaviour
         _leftHand.rectTransform.DOMove(_leftHandDefaultPosition, _animationDuration, true).SetEase(Ease.InOutQuad);
         _rightHand.rectTransform.DOMove(_rightHandDefaultPosition, _animationDuration, true).SetEase(Ease.InOutQuad);
     }
+
+    public void HideScreen()
+    {
+        _occlusion.DOKill();
+        _occlusion.DOFade(1, 3).SetEase(Ease.Linear);
+    }
 }
