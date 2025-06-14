@@ -86,6 +86,100 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &4346900953239071189
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5788739553001100812}
+  - component: {fileID: 3984567508130808244}
+  - component: {fileID: 7225114579004931039}
+  - component: {fileID: 3510165012533200184}
+  m_Layer: 0
+  m_Name: InteractableTrigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5788739553001100812
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4346900953239071189}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.511, z: 0.669}
+  m_LocalScale: {x: 1, y: 1, z: 1.2628126}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 91088513550993898}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &3984567508130808244
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4346900953239071189}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &7225114579004931039
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4346900953239071189}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
+--- !u!114 &3510165012533200184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4346900953239071189}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 255fa6d2d4a24b1eb4a9d539cd8fbb72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5161596440753114162
 GameObject:
   m_ObjectHideFlags: 0
@@ -168,6 +262,7 @@ GameObject:
   - component: {fileID: 4792253956558501930}
   - component: {fileID: 8448965398400280381}
   - component: {fileID: 455353385536968442}
+  - component: {fileID: 7647108363258739327}
   m_Layer: 9
   m_Name: Player
   m_TagString: Untagged
@@ -192,6 +287,7 @@ Transform:
   - {fileID: 2104459501724458327}
   - {fileID: 1171162591334436247}
   - {fileID: 121473183599276120}
+  - {fileID: 5788739553001100812}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!136 &1171384021387764899
@@ -376,6 +472,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _animator: {fileID: 41334509297969444}
+--- !u!114 &7647108363258739327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6363214815827036364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b52f8f5b85014ab4ab7e994a77a64646, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactableCheckTrigger: {fileID: 3510165012533200184}
 --- !u!1 &6435379464040039871
 GameObject:
   m_ObjectHideFlags: 0
@@ -504,7 +613,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1171162591334436247}
   - component: {fileID: 163267215949644626}
-  - component: {fileID: 508238701786770586}
+  - component: {fileID: 586028252217022835}
   m_Layer: 9
   m_Name: Point Light
   m_TagString: Untagged
@@ -592,7 +701,7 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
---- !u!114 &508238701786770586
+--- !u!114 &586028252217022835
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
