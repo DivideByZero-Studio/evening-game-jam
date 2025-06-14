@@ -7,10 +7,10 @@ public class PlayerSensorController : MonoBehaviour
 
     [SerializeField] private Animator _animator;
     [SerializeField] private PushableHands _pushableHands;
-    
+    [SerializeField] private PlayerHealth _playerHealth;
     private void Update()
     {
-        if (_pushableHands.IsPushing && (Visible || Audible))
+        if (_pushableHands.IsPushing && (Visible || Audible) || _playerHealth.IsAlive == false)
         {
             Visible = false;
             _animator.SetBool("EyesClosed", false);
@@ -19,8 +19,11 @@ public class PlayerSensorController : MonoBehaviour
             Audible = false; 
             _animator.SetBool("EarsClosed", false);
         }
-        ProcessEyes();
-        ProcessEars();
+        else
+        {
+            ProcessEyes();
+            ProcessEars();
+        }
     }
 
     private void ProcessEyes()

@@ -459,6 +459,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _animator: {fileID: 41334509297969444}
   _pushableHands: {fileID: 8538445574239007244}
+  _playerHealth: {fileID: 455353385536968442}
 --- !u!114 &455353385536968442
 MonoBehaviour:
   m_ObjectHideFlags: 0
