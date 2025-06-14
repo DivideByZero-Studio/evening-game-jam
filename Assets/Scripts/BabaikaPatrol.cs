@@ -4,6 +4,8 @@ public class BabaikaPatrol : MonoBehaviour
 {
     [SerializeField] private EyeEnemyAttack _enemyAttack;
     [SerializeField] private Animator _animator;
+
+    [SerializeField] private Transform _meshTransform;
     
     [SerializeField] private Transform _leftPoint;
     [SerializeField] private Transform _rightPoint;
@@ -11,10 +13,13 @@ public class BabaikaPatrol : MonoBehaviour
     [SerializeField] private float _speed;
 
     private Vector3 _currentPoint;
+    private Quaternion _rotation;
 
     private void Start()
     {
         _currentPoint = new Vector3(transform.position.x, transform.position.y, _leftPoint.position.z);
+        _meshTransform.rotation = Quaternion.Euler(0, 180, 0);
+        _rotation = _meshTransform.rotation;
     }
 
     private void Update()
@@ -28,7 +33,7 @@ public class BabaikaPatrol : MonoBehaviour
             return;
         
         transform.position = Vector3.MoveTowards(transform.position, _currentPoint, _speed * Time.deltaTime);
-
+        _meshTransform.rotation = Quaternion.Lerp(_meshTransform.rotation, _rotation, 20 * Time.deltaTime);
         if (Vector3.Distance(transform.position, _currentPoint) <= 0.1f)
         {
             if (Mathf.Approximately(_currentPoint.z, _leftPoint.position.z))
