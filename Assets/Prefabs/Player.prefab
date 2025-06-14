@@ -263,6 +263,7 @@ GameObject:
   - component: {fileID: 8448965398400280381}
   - component: {fileID: 455353385536968442}
   - component: {fileID: 7647108363258739327}
+  - component: {fileID: 8072433690901436980}
   m_Layer: 9
   m_Name: Player
   m_TagString: Untagged
@@ -486,6 +487,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactableCheckTrigger: {fileID: 3510165012533200184}
+--- !u!114 &8072433690901436980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6363214815827036364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4840f1fa270046249c7f3b1c8bdea683, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  awakeSound: {fileID: 8300000, guid: e8e97900d63626a4bb3fa3793a309c97, type: 3}
+  footstepSound: {fileID: 8300000, guid: 7607808eed178f24697e22ccbd860699, type: 3}
+  jumpSound: {fileID: 8300000, guid: ed014403f6235c1458f28a41585315b4, type: 3}
+  landingSound: {fileID: 8300000, guid: 32889ba1c44ac854b90e3c8ffbfbe834, type: 3}
+  gotDamagedSound: {fileID: 8300000, guid: 9d336d0a92638fa409a3329d258a99e8, type: 3}
+  deathSound: {fileID: 8300000, guid: 0409cb607ec13dd4b81fdde3930485d2, type: 3}
 --- !u!1 &6435379464040039871
 GameObject:
   m_ObjectHideFlags: 0

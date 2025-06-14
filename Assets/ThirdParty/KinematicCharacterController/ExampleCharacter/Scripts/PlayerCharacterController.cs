@@ -88,8 +88,12 @@ namespace KinematicCharacterController.Examples
         private Vector3 lastInnerNormal = Vector3.zero;
         private Vector3 lastOuterNormal = Vector3.zero;
 
+        private PlayerSound _playerSound;
+
         private void Awake()
         {
+            _playerSound = GetComponent<PlayerSound>();
+            
             // Handle initial state
             TransitionToState(CharacterState.Default);
 
@@ -357,6 +361,8 @@ namespace KinematicCharacterController.Examples
                             // See if we actually are allowed to jump
                             if (!_jumpConsumed && ((AllowJumpingWhenSliding ? Motor.GroundingStatus.FoundAnyGround : Motor.GroundingStatus.IsStableOnGround) || _timeSinceLastAbleToJump <= JumpPostGroundingGraceTime))
                             {
+                                _playerSound.PlayJumpSound();
+                                
                                 // Calculate jump direction before ungrounding
                                 Vector3 jumpDirection = Motor.CharacterUp;
                                 if (Motor.GroundingStatus.FoundAnyGround && !Motor.GroundingStatus.IsStableOnGround)
@@ -503,6 +509,7 @@ namespace KinematicCharacterController.Examples
 
         protected void OnLanded()
         {
+            _playerSound.PlayLandingSound();
         }
 
         protected void OnLeaveStableGround()

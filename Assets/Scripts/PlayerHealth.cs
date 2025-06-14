@@ -8,18 +8,28 @@ public class PlayerHealth : MonoBehaviour
     
     [SerializeField] private Animator _animator;
     
+    private PlayerSound _playerSound;
     private int _health = 2;
+
+    private void Awake()
+    {
+        _playerSound = GetComponent<PlayerSound>();
+    }
 
     public void TakeDamage(int amount)
     {
         if (_health <= 0)
             return;
         
-        _health -= amount;
+        _playerSound.PlayGotDamagedSound();
         
+        _health -= amount;
         if (_health <= 0)
         {
+            AudioManager.Instance.SetNormalSnapshot(0.3f);
+            _playerSound.PlayDeathSound();
             _animator.SetTrigger("Dead");
+            
             StartCoroutine(DeadRoutine());
         }
     }

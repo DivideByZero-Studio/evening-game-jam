@@ -55,7 +55,7 @@ public class PlayerSensorController : MonoBehaviour
         {
             Audible = false; 
             _animator.SetBool("EarsClosed", false);
-            
+            AudioManager.Instance.SetNormalSnapshot(0.3f);
         }
         
         if (!Input.GetKeyDown(KeyCode.Mouse1))
@@ -63,8 +63,7 @@ public class PlayerSensorController : MonoBehaviour
 
         Audible = true;
         _animator.SetBool("EarsClosed", true);
-
-        
+        AudioManager.Instance.SetEarsClosedSnapshot(0.3f);
     }
     
 }
