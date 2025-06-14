@@ -225,6 +225,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _animator: {fileID: 4900182789540804521}
+  _meshTransform: {fileID: 0}
+  _timeToAttack: 0.5
 --- !u!95 &4900182789540804521
 Animator:
   serializedVersion: 7

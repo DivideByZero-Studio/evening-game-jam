@@ -7,6 +7,7 @@ public class EyeEnemyAttack : MonoBehaviour
     public bool IsAttacking { get; private set; }
     [SerializeField] private Animator _animator;
     [SerializeField] private Transform _meshTransform;
+    [SerializeField] private float _timeToAttack = 0.5f;
     
     private void OnTriggerStay(Collider other)
     {
@@ -28,7 +29,7 @@ public class EyeEnemyAttack : MonoBehaviour
         _animator.SetTrigger("Hit");
 
         float timer = 0;
-        while (timer < 0.5f)
+        while (timer < _timeToAttack)
         {
             _meshTransform.LookAt(new Vector3(playerHealth.transform.position.x, 0, playerHealth.transform.position.z));
             timer += Time.deltaTime;
