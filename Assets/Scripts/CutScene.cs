@@ -11,6 +11,8 @@ public class CutScene : MonoBehaviour
 
     private void Start()
     {
+        _videoPlayer.url = System.IO.Path.Combine(Application.streamingAssetsPath, "CutScene.mp4");
+        _videoPlayer.Play();
         _videoPlayer.SetDirectAudioVolume(0, 0.75f * AudioManager.Instance.MasterVol);
     }
     
