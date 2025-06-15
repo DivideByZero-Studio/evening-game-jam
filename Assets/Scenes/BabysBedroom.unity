@@ -8630,6 +8630,10 @@ PrefabInstance:
       propertyPath: _clip
       value: 
       objectReference: {fileID: 8300000, guid: cc17340b61b0e564e9bd6f19244ef968, type: 3}
+    - target: {fileID: -3946251215597715402, guid: 75c249714903ee947a2c6d2bc888c30c, type: 3}
+      propertyPath: _doNotStopMusic
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6650563770209979492, guid: 75c249714903ee947a2c6d2bc888c30c, type: 3}
       propertyPath: m_Name
       value: LevelAmbientSound
