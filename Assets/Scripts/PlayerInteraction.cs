@@ -13,13 +13,17 @@ public class PlayerInteraction : MonoBehaviour
             if (col.TryGetComponent(out IInteractable interactable))
             {
                 _targetInteractable = interactable;
+                _targetInteractable.ShowHint();
             }
         };
         interactableCheckTrigger.TriggerExit += col =>
         {
             if (col.TryGetComponent(out IInteractable interactable))
+            {
                 if (_targetInteractable == interactable)
                     _targetInteractable = null;
+                interactable.HideHint();
+            }
         };
     }
 

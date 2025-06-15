@@ -123,3 +123,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelToLoad: 
   _audioClip: {fileID: 8300000, guid: 42ef1a58d4617f04f9b3318e81b6b0d2, type: 3}
+  _hintInteractable: {fileID: 0}
