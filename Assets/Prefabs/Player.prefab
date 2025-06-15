@@ -264,6 +264,7 @@ GameObject:
   - component: {fileID: 455353385536968442}
   - component: {fileID: 7647108363258739327}
   - component: {fileID: 8072433690901436980}
+  - component: {fileID: 680449191761660369}
   m_Layer: 9
   m_Name: Player
   m_TagString: Untagged
@@ -505,6 +506,21 @@ MonoBehaviour:
   landingSound: {fileID: 8300000, guid: e1e1a4ff3adc7bb46ab48b5d6feaf014, type: 3}
   gotDamagedSound: {fileID: 8300000, guid: 9d336d0a92638fa409a3329d258a99e8, type: 3}
   deathSound: {fileID: 8300000, guid: 0409cb607ec13dd4b81fdde3930485d2, type: 3}
+--- !u!114 &680449191761660369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6363214815827036364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f6964a72121b2c4292e4a88c5020e6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animator: {fileID: 41334509297969444}
+  _playerMovement: {fileID: 6174438276642953302}
+  _playerSensorController: {fileID: 8448965398400280381}
 --- !u!1 &6435379464040039871
 GameObject:
   m_ObjectHideFlags: 0
