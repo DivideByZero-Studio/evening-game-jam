@@ -509,7 +509,7 @@ namespace KinematicCharacterController.Examples
 
         protected void OnLanded()
         {
-            _playerSound.PlayLandingSound();
+
         }
 
         protected void OnLeaveStableGround()
