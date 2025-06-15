@@ -78,6 +78,11 @@ public class AudioManager : MonoBehaviour
         _currentAmbientSource.Play();
     }
 
+    public void StopAmbient()
+    {
+        _currentAmbientSource.Stop();
+    }
+    
     public void PlayAmbientWithSmoothChange(AudioClip clip, float smoothTime, float volume = 1)
     {
         var nextSource = _currentAmbientSource == ambientSource1 ? ambientSource2 : ambientSource1;

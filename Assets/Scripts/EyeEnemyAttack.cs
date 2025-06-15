@@ -8,7 +8,7 @@ public class EyeEnemyAttack : MonoBehaviour
     [SerializeField] private Animator _animator;
     [SerializeField] private Transform _meshTransform;
     [SerializeField] private float _timeToAttack = 0.5f;
-    [SerializeField] private AudioSource _audioSource;
+    [SerializeField] private AudioClip _hitClip;
     
     private void OnTriggerStay(Collider other)
     {
@@ -28,7 +28,7 @@ public class EyeEnemyAttack : MonoBehaviour
         
         _meshTransform.LookAt(new Vector3(playerHealth.transform.position.x, 0, playerHealth.transform.position.z));
         _animator.SetTrigger("Hit");
-
+        
         float timer = 0;
         while (timer < _timeToAttack)
         {
@@ -36,7 +36,7 @@ public class EyeEnemyAttack : MonoBehaviour
             timer += Time.deltaTime;
             yield return null;
         }
-        
+        AudioManager.Instance.PlaySfxOneShot(_hitClip, 0.5f);
         playerHealth.TakeDamage(2);
         yield return new WaitForSeconds(1f);
         IsAttacking = false;

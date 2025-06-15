@@ -9,7 +9,7 @@ public class SoundEnemyAttack : MonoBehaviour
     [SerializeField] private Transform _meshTransform;
 
     [SerializeField] private GameObject _projectile;
-        
+    [SerializeField] private AudioClip _audioClip;
     [SerializeField] private float _timeToAttack;
     
     private Transform _target;
@@ -49,7 +49,7 @@ public class SoundEnemyAttack : MonoBehaviour
     {
         _animator.SetTrigger("Hit");
         _projectile.SetActive(true);
-
+        AudioManager.Instance.PlaySfxOneShot(_audioClip, 0.5f);
         yield return new WaitForSeconds(_timeToAttack);
         
         playerHealth.TakeDamage(1);
