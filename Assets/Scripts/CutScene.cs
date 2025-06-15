@@ -8,6 +8,11 @@ public class CutScene : MonoBehaviour
     private bool _loading;
 
     private float _timer;
+
+    private void Start()
+    {
+        _videoPlayer.SetDirectAudioVolume(0, 0.75f * AudioManager.Instance.MasterVol);
+    }
     
     private void Update()
     {

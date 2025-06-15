@@ -17,7 +17,7 @@ public class LevelEndInteractable : MonoBehaviour, IInteractable
         else
             SceneLoader.Instance.LoadScene(levelToLoad);
         
-        AudioManager.Instance.PlaySfxOneShot(_audioClip);
+        AudioManager.Instance.PlaySfxOneShot(_audioClip, 0.5f);
         _hintInteractable.HideWithParticles();
         enabled = false;
     }

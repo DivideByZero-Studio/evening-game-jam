@@ -5,6 +5,8 @@ using UnityEngine.Audio;
 [DefaultExecutionOrder(-100)]
 public class AudioManager : MonoBehaviour
 {
+    public float MasterVol { get; private set; } = 1;
+    
     private const string MasterVolume = nameof(MasterVolume);
     private const string AmbientVolume = nameof(AmbientVolume);
     private const string SfxVolume = nameof(SfxVolume);
@@ -20,7 +22,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioSource ambientSource1;
     [SerializeField] private AudioSource ambientSource2;
     [SerializeField] private AudioSource sfxSource;
-
+    
     private AudioSource _currentAmbientSource;
 
     private float _volumeBeforeMuting;
@@ -63,6 +65,7 @@ public class AudioManager : MonoBehaviour
     private void SetVolume(string mixerGroupVolumeParameter, float volume)
     {
         float volumeValue = Mathf.Log10(volume) * 20;
+        MasterVol = volume;
         audioMixer.SetFloat(mixerGroupVolumeParameter, volumeValue);
     }
     
