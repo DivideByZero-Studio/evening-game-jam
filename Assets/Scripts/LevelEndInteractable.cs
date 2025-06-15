@@ -5,6 +5,7 @@ public class LevelEndInteractable : MonoBehaviour, IInteractable
 {
     [SerializeField] private string levelToLoad;
     [SerializeField] private AudioClip _audioClip;
+    [SerializeField] private HintInteractable _hintInteractable;
     
     public void Interact()
     {
@@ -17,5 +18,19 @@ public class LevelEndInteractable : MonoBehaviour, IInteractable
             SceneLoader.Instance.LoadScene(levelToLoad);
         
         AudioManager.Instance.PlaySfxOneShot(_audioClip);
+        _hintInteractable.HideWithParticles();
+        enabled = false;
+    }
+    
+    public void ShowHint()
+    {
+        if (enabled == false)
+            return;
+        _hintInteractable.Show();
+    }
+
+    public void HideHint()
+    {
+        _hintInteractable.Hide();
     }
 }
