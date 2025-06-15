@@ -6,10 +6,12 @@ public class BabaikaPatrol : MonoBehaviour
     [SerializeField] private Animator _animator;
 
     [SerializeField] private Transform _meshTransform;
+
+    [SerializeField] private AudioSource _audioSource;
     
     [SerializeField] private Transform _leftPoint;
     [SerializeField] private Transform _rightPoint;
-
+    
     [SerializeField] private float _speed;
 
     private Vector3 _currentPoint;
@@ -30,7 +32,13 @@ public class BabaikaPatrol : MonoBehaviour
     private void Patrol()
     {
         if (_enemyAttack.IsAttacking)
+        {
+            _audioSource.Stop();
             return;
+        }
+        
+        if (_audioSource.isPlaying == false)
+            _audioSource.Play();
         
         transform.position = Vector3.MoveTowards(transform.position, _currentPoint, _speed * Time.deltaTime);
         _meshTransform.rotation = Quaternion.Lerp(_meshTransform.rotation, _rotation, 20 * Time.deltaTime);
