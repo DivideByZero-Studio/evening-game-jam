@@ -19,6 +19,8 @@ public class UIController : MonoBehaviour
     private Vector3 _leftHandDefaultPosition;
     private Vector3 _rightHandDefaultPosition;
     
+    private bool _eyesClosed;
+    
     private void Awake()
     {
         if (_instance == null)
@@ -38,6 +40,8 @@ public class UIController : MonoBehaviour
 
     public void CloseEyes()
     {
+        if (_eyesClosed)
+            return;
         _leftHand.rectTransform.DOKill();
         _rightHand.rectTransform.DOKill();
         _occlusion.DOKill();
@@ -45,10 +49,13 @@ public class UIController : MonoBehaviour
         _occlusion.DOFade(0.85f, _animationDuration).SetEase(Ease.Linear);
         _leftHand.rectTransform.DOMove(_rectTransform.position, _animationDuration, true).SetEase(Ease.InOutQuad);
         _rightHand.rectTransform.DOMove(_rectTransform.position, _animationDuration, true).SetEase(Ease.InOutQuad);
+        _eyesClosed = true;
     }
 
     public void OpenEyes()
     {
+        if (!_eyesClosed)
+            return;
         _leftHand.rectTransform.DOKill();
         _rightHand.rectTransform.DOKill();
         _occlusion.DOKill();
@@ -56,6 +63,7 @@ public class UIController : MonoBehaviour
         _occlusion.DOFade(0, _animationDuration).SetEase(Ease.Linear);
         _leftHand.rectTransform.DOMove(_leftHandDefaultPosition, _animationDuration, true).SetEase(Ease.InOutQuad);
         _rightHand.rectTransform.DOMove(_rightHandDefaultPosition, _animationDuration, true).SetEase(Ease.InOutQuad);
+        _eyesClosed = false;
     }
 
     public void HideScreen()

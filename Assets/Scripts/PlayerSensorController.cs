@@ -26,6 +26,17 @@ public class PlayerSensorController : MonoBehaviour
         }
     }
 
+    public void Disable()
+    {
+        Visible = false;
+        _animator.SetBool("EyesClosed", false);
+        UIController.Instance.OpenEyes();
+            
+        Audible = false; 
+        _animator.SetBool("EarsClosed", false);
+        enabled = false;
+    }
+    
     private void ProcessEyes()
     {
         if (Audible)
