@@ -8,6 +8,7 @@ public class EyeEnemyAttack : MonoBehaviour
     [SerializeField] private Animator _animator;
     [SerializeField] private Transform _meshTransform;
     [SerializeField] private float _timeToAttack = 0.5f;
+    [SerializeField] private AudioSource _audioSource;
     
     private void OnTriggerStay(Collider other)
     {

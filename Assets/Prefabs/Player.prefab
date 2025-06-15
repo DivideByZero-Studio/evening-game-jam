@@ -500,9 +500,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   awakeSound: {fileID: 8300000, guid: e8e97900d63626a4bb3fa3793a309c97, type: 3}
-  footstepSound: {fileID: 8300000, guid: 7607808eed178f24697e22ccbd860699, type: 3}
+  footstepSound: {fileID: 8300000, guid: 4b3bf9903ac05d341bb203e845622b30, type: 3}
   jumpSound: {fileID: 8300000, guid: ed014403f6235c1458f28a41585315b4, type: 3}
-  landingSound: {fileID: 8300000, guid: 32889ba1c44ac854b90e3c8ffbfbe834, type: 3}
+  landingSound: {fileID: 8300000, guid: e1e1a4ff3adc7bb46ab48b5d6feaf014, type: 3}
   gotDamagedSound: {fileID: 8300000, guid: 9d336d0a92638fa409a3329d258a99e8, type: 3}
   deathSound: {fileID: 8300000, guid: 0409cb607ec13dd4b81fdde3930485d2, type: 3}
 --- !u!1 &6435379464040039871
@@ -1882,7 +1882,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6bf14464ce84a624db86d2b0a2767fc1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1508312230606338568}
   m_SourcePrefab: {fileID: 100100000, guid: 6bf14464ce84a624db86d2b0a2767fc1, type: 3}
 --- !u!95 &41334509297969444 stripped
 Animator:
@@ -1894,3 +1897,21 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6bf14464ce84a624db86d2b0a2767fc1, type: 3}
   m_PrefabInstance: {fileID: 5906554670077908149}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &6717442085481753060 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 6bf14464ce84a624db86d2b0a2767fc1, type: 3}
+  m_PrefabInstance: {fileID: 5906554670077908149}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1508312230606338568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6717442085481753060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77ef6274a17a44939fda937382d0e35e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerSound: {fileID: 8072433690901436980}

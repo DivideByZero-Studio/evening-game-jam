@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class Obstacle : MonoBehaviour, IInteractable
 {
-    
+    [SerializeField] private AudioClip _notEnterSound;
     
     public void Interact()
     {
-        // TODO: Click sound;
+        AudioManager.Instance.PlaySfxOneShot(_notEnterSound);
     }
 }
