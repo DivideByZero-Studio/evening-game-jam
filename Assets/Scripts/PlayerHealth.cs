@@ -24,6 +24,9 @@ public class PlayerHealth : MonoBehaviour
         _playerSound.PlayGotDamagedSound();
         
         _health -= amount;
+        
+        UIController.Instance.VignetteSFX();
+        
         if (_health <= 0)
         {
             AudioManager.Instance.SetNormalSnapshot(0.3f);

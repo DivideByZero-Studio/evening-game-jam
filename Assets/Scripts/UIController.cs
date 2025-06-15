@@ -11,6 +11,8 @@ public class UIController : MonoBehaviour
     [SerializeField] private Image _leftHand;
     [SerializeField] private Image _rightHand;
     [SerializeField] private Image _occlusion;
+
+    [SerializeField] private Image _damageVignette;
     
     [SerializeField] private float _animationDuration;
     
@@ -37,7 +39,7 @@ public class UIController : MonoBehaviour
         _leftHandDefaultPosition = _leftHand.rectTransform.position;
         _rightHandDefaultPosition = _rightHand.rectTransform.position;
     }
-
+    
     public void CloseEyes()
     {
         if (_eyesClosed)
@@ -70,5 +72,13 @@ public class UIController : MonoBehaviour
     {
         _occlusion.DOKill();
         _occlusion.DOFade(1, 3).SetEase(Ease.Linear);
+    }
+
+    public void VignetteSFX()
+    {
+        Sequence sequence = DOTween.Sequence();
+        sequence.Append(_damageVignette.DOFade(1, 0.05f).SetEase(Ease.InOutQuad));
+        sequence.Append(_damageVignette.DOFade(0, 3f).SetEase(Ease.InOutQuad));
+        sequence.Play();
     }
 }
