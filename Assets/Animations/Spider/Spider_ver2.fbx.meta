@@ -7,6 +7,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Net
+    second: {fileID: 2100000, guid: cccccd459f9fff44ea241f53be4db224, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Spider
     second: {fileID: 2100000, guid: 895eba1647c20f141905434e7627a041, type: 2}
   materials:
