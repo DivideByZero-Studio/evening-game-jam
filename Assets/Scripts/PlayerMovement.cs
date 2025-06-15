@@ -9,6 +9,18 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 inputDirection;
     private PlayerInput playerInput;
 
+    public void Disable()
+    {
+        var characterInputs = new PlayerCharacterInputs
+        {
+            MoveAxisRight = 0f,
+            MoveAxisForward = 0f,
+            JumpDown = false,
+        };
+
+        characterController.SetInputs(ref characterInputs);
+    }
+    
     private void Update()
     {
         if (!_playerHealth.IsAlive)

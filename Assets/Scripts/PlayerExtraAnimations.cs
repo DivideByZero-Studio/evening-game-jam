@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerExtraAnimations : MonoBehaviour
 {
@@ -25,8 +26,17 @@ public class PlayerExtraAnimations : MonoBehaviour
 
     public void LayDown()
     {
+        StartCoroutine(LayDownAnimationRoutine());
+    }
+
+    private IEnumerator LayDownAnimationRoutine()
+    {
         _animator.SetTrigger("LayDown");
+        _playerMovement.Disable();
         _playerMovement.enabled = false;
+        _playerSensorController.Disable();
         _playerSensorController.enabled = false;
+        yield return new WaitForSeconds(6);
+        SceneLoader.Instance.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
